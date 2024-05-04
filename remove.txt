@@ -1,0 +1,4 @@
+device/sony
+hardware/sony
+vendor/sony
+kernel/sony

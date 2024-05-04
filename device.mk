@@ -41,9 +41,6 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, vendor/sony/extra/extra.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
-
 PRODUCT_PACKAGES += \
     SonyPDX203SystemUIRes \
     SonyPDX203FrameworksRes

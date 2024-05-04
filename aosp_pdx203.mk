@@ -21,8 +21,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from device.mk
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common aosp stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Extras
 ifneq ($(wildcard vendor/sony/extra),)
@@ -30,9 +30,26 @@ TARGET_USES_EXTRAS_DOLBY := true
 TARGET_USES_EXTRAS_CAMERAAPPS := true
 endif
 
+# Project-Elixir Flags
 IS_PHONE := true
+TARGET_SUPPORTS_QUICK_TAP := true
+ELIXIR_BUILD_TYPE := OFFICIAL
+BUILD_USERNAME := Elixir
+BUILD_HOSTNAME := Elixir
+TARGET_USES_AOSP_RECOVERY := false
+TARGET_SUPPORTS_CALL_RECORDING := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
+TARGET_INCLUDE_STOCK_ACORE := false
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_USES_FULL_GAPPS := false
+TARGET_USES_PICO_GAPPS := true
+EXCLUDE_LAWNCHAIR := true
 
-PRODUCT_NAME := lineage_pdx203
+# Boot animation resolution.
+TARGET_BOOT_ANIMATION_RES := 1080
+
+PRODUCT_NAME := aosp_pdx203
 PRODUCT_DEVICE := pdx203
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_BRAND := Sony
